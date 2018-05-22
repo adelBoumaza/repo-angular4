@@ -4,17 +4,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { routing } from './routing';
+import { ApiService } from './service/api.service';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { HomeService } from './home/home.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    HomeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
